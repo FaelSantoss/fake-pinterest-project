@@ -13,6 +13,19 @@
 {% block body %}
 <body>
     <h1>Meu primeiro site em flask</h1>
+    {% block form %}
+    <form method="POST">
+        {{ form.csrf_token }}
+        
+        {{ form.email.label() }}
+        {{ form.email() }}
+
+        {{ form.senha.label() }}
+        {{ form.senha() }}
+
+        {{ form.botao_confirmacao() }}
+    </form>
+    {% endblock %}
 </body>
 {% endblock %}
 </html>
