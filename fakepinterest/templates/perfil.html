@@ -5,8 +5,13 @@ Perfil - {{usuario}}
 {% endblock %}
 {% block body %}
 <body>
-    <h1>Perfil do usuario: {{usuario}}</h1>
 
-    <a href="{{url_for('logout')}}">Sair</a>
+<h1>Perfil do usuario: {{usuario.username}}</h1>
+
+<a href="{{url_for('logout')}}">Sair</a>
+
+{% for foto in usuario.fotos %}
+<img src="default.png">
+{% endfor%}
 </body>
 {% endblock %}
